@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek AI Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Highlight.js for Code Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>Groq</span>
+                </div>
+            </div>
+            <div class="new-chat">
+                <button id="new-chat-btn"><i class="fas fa-plus"></i> New Chat</button>
+            </div>
+            <div class="chat-history">
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="avatar">U</div>
+                    <span>User</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-container">
+            <header class="chat-header">
+                <h1>Groq AI Chat</h1>
+                <div class="model-badge">llama-3.3-70b</div>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        Hello! I'm Groq AI. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Ask anything..." rows="1"></textarea>
+                    <button id="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">Powered by Groq API. Artificial Intelligence can make mistakes.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
