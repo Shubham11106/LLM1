@@ -40,9 +40,9 @@ def chat():
         })
     except Exception as e:
         error_msg = str(e)
-        print(f"DeepSeek API Error: {error_msg}")
+        print(f"Groq API Error: {error_msg}")
         return jsonify({
-            "error": "Failed to fetch response from DeepSeek",
+            "error": "Failed to fetch response from Groq",
             "details": error_msg 
         }), 500
 
